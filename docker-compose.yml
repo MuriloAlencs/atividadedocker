@@ -1,6 +1,6 @@
 services:
   backend:
-    build: ./guess
+    build: .
     ports:
       - "5000:5000"
     depends_on:
@@ -8,7 +8,9 @@ services:
     restart: always
 
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
     ports:
       - "80:80"
     depends_on:
