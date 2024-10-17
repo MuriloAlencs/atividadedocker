@@ -12,7 +12,7 @@ services:
     ports:
       - "5000:5000"
     depends_on:
-      - db
+      - postgres
     restart: always
     networks:
       - mynet
@@ -29,7 +29,7 @@ services:
     networks:
       - mynet
 
-  db:
+  postgres:
     image: postgres
     volumes:
       - db-data:/var/lib/postgresql/data
@@ -59,3 +59,4 @@ volumes:
 
 networks:
   mynet:
+
