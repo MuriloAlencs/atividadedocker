@@ -1,7 +1,14 @@
 services:
   backend:
-    build: 
-      dockerfile: Dockerfile
+    build: . 
+    environment:
+      - FLASK_APP=run.py
+      - FLASK_DB_TYPE=postgres
+      - FLASK_DB_USER=myuser
+      - FLASK_DB_PASSWORD=mypassword
+      - FLASK_DB_NAME=mydatabase
+      - FLASK_DB_HOST=postgres
+      - FLASK_DB_PORT=5432
     ports:
       - "5000:5000"
     depends_on:
