@@ -37,7 +37,7 @@ docker-compose build
 docker-compose up -d
 ```
 ## Uso
-Para acessar a aplicação, abra o navegador e acesse o endereço http://localhost:8080.
+Para acessar a aplicação, abra o navegador e acesse o endereço http://TroquePeloIp:8080.
 
 ## Atualização
 Para atualizar os serviços, execute os seguintes comandos:
