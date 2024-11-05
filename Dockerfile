@@ -1,7 +1,7 @@
 FROM python:3.8-alpine
 WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
-RUN apk add --no-cache python3 py3-pip && \
-    pip3 install --no-cache-dir -r requirements.txt
-EXPOSE 5000
-CMD ["sh", "./start-backend.sh"]
+COPY --from=frontend /app/build /usr/share/nginx/html
+CMD ["python", "app.py"]
