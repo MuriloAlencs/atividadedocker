@@ -16,23 +16,13 @@ services:
     restart: always
     networks:
       - mynet
-    deploy:
-      replicas: 3
-      resources:
-        limits:
-          cpus: "0.1"
-          memory: 50M
-      restart_policy:
-        condition: on-failure
-    command: python run.py
+    command:  python run.py
 
-  frontend:
+  frontend-build:
     build: ./frontend
     command: npm run build
     volumes:
       - ./frontend:/app
-    depends_on:
-      - nginx-frontend
 
   nginx-frontend:
     image: nginx:latest
@@ -41,7 +31,7 @@ services:
     volumes:
       - ./frontend/build:/usr/share/nginx/html
     depends_on:
-      - frontend
+      - frontend-build
 
   nginx-backend:
     image: nginx:latest
