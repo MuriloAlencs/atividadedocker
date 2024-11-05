@@ -37,7 +37,7 @@ docker-compose build
 docker-compose up -d
 ```
 ## Uso
-Para acessar a aplicação, abra o navegador e acesse o endereço http://localhost:8080.
+Para acessar a aplicação, abra o navegador e acesse o endereço http://TroquePeloIp:8080.
 
 ## Atualização
 Para atualizar os serviços, execute os seguintes comandos:
@@ -47,7 +47,5 @@ docker-compose pull
 docker-compose up -d
 ```
 
-# Atualização de Componentes
+## Atualização de Componentes
 Para atualizar um componente, basta trocar a versão da imagem Docker no arquivo docker-compose.yml. Por exemplo, para atualizar o Nginx para a versão 1.19, basta alterar a linha nginx:latest para nginx:1.19.
-
-Conclusão
