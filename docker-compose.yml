@@ -32,7 +32,7 @@ services:
     volumes:
       - ./frontend:/app
     depends_on:
-      - nginx
+      - nginx-frontend
 
   nginx-frontend:
     image: nginx:latest
